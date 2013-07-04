@@ -25,6 +25,8 @@
 	
 	exports = typeof(exports) ==='object' ? exports : window;
 	
+	exports.isSupportTouch = isTouch;
+	
 	event.forEach(function(a,b){
 		exports[a[0]] || (exports[a[0]] = a[1][i]);
 	});
