@@ -1,0 +1,37 @@
+<script>
+//var exports = {};
+//
+//
+
+
+!function(window, doc, undefined){	
+
+	var isTouch = 'createTouch' in document,
+	
+	event = [
+		['_start' , ['touchstart' , 'mousedown']],
+		['_move' , ['touchmove' , 'mousemove']],
+		['_end' , ['touchend' , 'mouseup']]
+	],
+	i = isTouch ? 0 : 1;
+	
+	exports = typeof(exports) ==='object' ? exports : window;
+	
+	event.forEach(function(a,b){
+		exports[a[0]] || (exports[a[0]] = a[1][i]);
+	});
+	
+}(this, document);
+
+
+document.addEventListener(exports._start,function(e){
+	//alert(e.type)
+},false)
+document.addEventListener(exports._move,function(e){
+	//alert(e.type)
+},false)
+document.addEventListener(exports._end,function(e){
+	//alert(e.type)
+},false)
+
+</script>
